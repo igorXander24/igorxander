@@ -340,15 +340,51 @@
            ------------------------------------------------------------------------- */
         @media (max-width: 767px) {
             portada {
-                /*background-color: #463F44;*/
                 justify-content: space-between;
-                /*background-image: url("lines.svg");*/
-                background-color: yellowgreen;
-                /*background-position: center;*/
-                /*background-repeat: no-repeat;*/
+                background-image: url("lines.svg");
                 background-size: cover;
                 align-items: center;
-                padding: 10% 5% 5% 5%;
+                padding: 5% 5% 5% 5%;
+            }
+
+            portada > developer {
+
+                align-items: center;
+                border: 1px solid #ccc;
+                min-width: 220px;
+            }
+
+            portada > developer > photo > img {
+                width: 144px;
+                height: 173px;
+            }
+
+            portada > developer > information {
+
+                padding: 0;
+                max-width: 320px;
+            }
+
+            portada > developer > information > name {
+
+                font-size: 1.4em;
+            }
+
+            portada > developer > information > occupation {
+                font-size: 1.2em;
+
+            }
+
+
+
+            portada > mouse {
+                width: 1.5em;
+                height: 2.5em;
+                padding-top: 0.3em;
+            }
+
+            portada > mouse > scroll {
+                height: 0.8em;
             }
         }
 
