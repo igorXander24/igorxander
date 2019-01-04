@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel="icon" href="id-card.svg">
     <style>
+        /* ESTILOS NORMALES (para escritorios muy grandes)
+            ========================================================================= */
         * {
             margin: 0;
             padding: 0;
@@ -32,12 +34,11 @@
         portada, datos, estudios, experiencia, documento, referencias {
             width: 100%;
             height: 100vh;
-            border-bottom: 1px solid #ccc;
+            /*border-bottom: 1px solid #ccc;*/
         }
 
         portada, information, datos {
             flex-direction: column;
-
         }
 
         /**
@@ -46,7 +47,8 @@
         portada {
             /*background-color: #463F44;*/
             justify-content: space-between;
-            background-image: url("lines.svg");
+            /*background-image: url("lines.svg");*/
+            background-color: #395976;
             /*background-position: center;*/
             /*background-repeat: no-repeat;*/
             background-size: cover;
@@ -263,11 +265,18 @@
          * DATOS PERSONALES
          */
         datos {
-            padding: 10px;
-            border: 20px solid darkorange;
+            /*
+            background-image: url("abstract-water-wallpaper.svg");
+            background-size: cover;
+            */
+        }
+
+        datos > page {
+            margin: 15px;
         }
 
         datos > page * {
+            color: lightcoral;
             font-family: 'Playfair Display', serif;
             font-size: 6vw;
         }
@@ -300,6 +309,107 @@
             background-color: darkgray;
             flex-grow: 1;
         }
+
+        datos > map * {
+            display: block;
+        }
+
+
+
+
+        /* RESPONSIVE
+           ========================================================================= */
+
+        /* Tablets en horizonal y escritorios normales
+           ------------------------------------------------------------------------- */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            portada {
+                /*background-color: #463F44;*/
+                justify-content: space-between;
+                /*background-image: url("lines.svg");*/
+                background-color: #e53935;
+                /*background-position: center;*/
+                /*background-repeat: no-repeat;*/
+                background-size: cover;
+                align-items: center;
+                padding: 10% 5% 5% 5%;
+            }
+        }
+
+        /* Móviles en horizontal o tablets en vertical
+           ------------------------------------------------------------------------- */
+        @media (max-width: 767px) {
+            portada {
+                /*background-color: #463F44;*/
+                justify-content: space-between;
+                /*background-image: url("lines.svg");*/
+                background-color: yellowgreen;
+                /*background-position: center;*/
+                /*background-repeat: no-repeat;*/
+                background-size: cover;
+                align-items: center;
+                padding: 10% 5% 5% 5%;
+            }
+        }
+
+        /* Móviles en vertical
+           ------------------------------------------------------------------------- */
+        @media (max-width: 480px) {
+            portada {
+                justify-content: space-between;
+                background-image: url("lines.svg");
+                background-size: cover;
+                align-items: center;
+                padding: 5% 5% 5% 5%;
+            }
+
+            portada > developer {
+                flex-direction: column;
+                align-items: center;
+                border: 1px solid #ccc;
+                min-width: 220px;
+            }
+
+            portada > developer > photo > img {
+                width: 96px;
+                height: 115px;
+            }
+
+            portada > developer > information {
+                justify-content: center;
+                padding: 0;
+                max-width: 240px;
+            }
+
+            portada > developer > information > name {
+                justify-content: center;
+                font-size: 1.4em;
+            }
+
+            portada > developer > information > occupation {
+                font-size: 1.2em;
+                justify-content: center;
+            }
+
+            portada > developer > information > slogan {
+                display: none;
+            }
+
+            portada > developer > information > contacts {
+                display: none;
+            }
+
+            portada > mouse {
+                width: 1.5em;
+                height: 2.5em;
+                padding-top: 0.3em;
+            }
+
+            portada > mouse > scroll {
+                height: 0.8em;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -319,7 +429,7 @@
                 @SoftwareDeveloper
             </occupation>
             <slogan>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur distinctio ea est, laboriosam repellat sed. Assumenda autem cupiditate dignissimos doloribus earum ex, laboriosam nam nobis quo sequi veritatis vitae.
+                Escribir código es como escribir un libro y lo puedes hacer en equipo o individual, debe ser coherente pe. si se decide escribir a Don Quijote al principio no puedes decir que era alto y luego cambiarlo por alguien bajo.
             </slogan>
             <contacts>
                 <phone>
@@ -407,10 +517,10 @@
     // Initialize and add the map
     function initMap() {
         // The location of Uluru
-        var uluru = {lat: -25.344, lng: 131.036};
+        var uluru = {lat: -7.216500, lng: -79.431779};
         // The map, centered at Uluru
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: uluru});
+            document.getElementById('map'), {zoom: 15, center: uluru});
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
     }
