@@ -324,15 +324,11 @@
            ------------------------------------------------------------------------- */
         @media (min-width: 768px) and (max-width: 1199px) {
             portada {
-                /*background-color: #463F44;*/
                 justify-content: space-between;
-                /*background-image: url("lines.svg");*/
-                background-color: #e53935;
-                /*background-position: center;*/
-                /*background-repeat: no-repeat;*/
+                background-image: url("lines.svg");
                 background-size: cover;
                 align-items: center;
-                padding: 10% 5% 5% 5%;
+                padding: 3% 5% 5% 5%;
             }
         }
 
@@ -360,9 +356,10 @@
             }
 
             portada > developer > information {
+                align-self: stretch;
 
-                padding: 0;
                 max-width: 320px;
+                padding: 5px 5px 0 5px;
             }
 
             portada > developer > information > name {
@@ -373,6 +370,10 @@
             portada > developer > information > occupation {
                 font-size: 1.2em;
 
+            }
+
+            portada > developer > information > contacts {
+                display: none;
             }
 
 
