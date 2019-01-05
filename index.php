@@ -37,7 +37,7 @@
             /*border-bottom: 1px solid #ccc;*/
         }
 
-        portada, information, datos {
+        portada, information {
             flex-direction: column;
         }
 
@@ -47,8 +47,8 @@
         portada {
             /*background-color: #463F44;*/
             justify-content: space-between;
-            /*background-image: url("lines.svg");*/
-            background-color: #395976;
+            background-image: url("lines.svg");
+
             /*background-position: center;*/
             /*background-repeat: no-repeat;*/
             background-size: cover;
@@ -269,36 +269,42 @@
             background-image: url("abstract-water-wallpaper.svg");
             background-size: cover;
             */
+
+        }
+
+        datos > container {
+            flex-direction: column;
+            max-width: 35%;
         }
 
         datos > page {
             margin: 15px;
         }
 
-        datos > page * {
+        datos > container > page * {
             color: lightcoral;
             font-family: 'Playfair Display', serif;
-            font-size: 6vw;
+            font-size: 3.5vw;
         }
 
-        datos > formulario {
+        datos > container > formulario {
             flex-wrap: wrap;
         }
 
-        datos > formulario > control {
+        datos > container > formulario > control {
             flex-direction: column;
             margin: 1em 3em;
             align-items: flex-start;
         }
 
-        datos > formulario > control > label {
+        datos > container > formulario > control > label {
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 1.5em;
+            font-size: 2vw;
             /*margin: 0 10px 0 15px;*/
             color: #8958b1;
         }
 
-        datos > formulario > control > text {
+        datos > container > formulario > control > text {
             border: none;
             border-bottom: 1px solid darkgray;
             color: dimgray;
@@ -329,6 +335,10 @@
                 background-size: cover;
                 align-items: center;
                 padding: 3% 5% 5% 5%;
+            }
+
+            datos {
+                background-color: beige;
             }
         }
 
@@ -376,8 +386,6 @@
                 display: none;
             }
 
-
-
             portada > mouse {
                 width: 1.5em;
                 height: 2.5em;
@@ -387,6 +395,24 @@
             portada > mouse > scroll {
                 height: 0.8em;
             }
+
+            datos {
+                background-color: rebeccapurple;
+                flex-direction: row;
+            }
+
+            datos > container {
+                min-width: 50%;
+            }
+
+            datos > container > page * {
+                font-size: 5vw;
+            }
+
+            datos > container > formulario > control {
+                margin: 0.4em 1em;
+            }
+
         }
 
         /* Móviles en vertical
@@ -445,6 +471,32 @@
             portada > mouse > scroll {
                 height: 0.8em;
             }
+
+            datos {
+                background-color: yellow;
+                flex-direction: column;
+            }
+
+            datos > container {
+                flex-direction: column;
+                min-width: 100%;
+            }
+
+            datos > container > page * {
+                font-size: 1.8em;
+            }
+
+            datos > container > formulario > control {
+                margin: 0.6em 1em;
+            }
+
+            datos > container > formulario > control > label {
+                font-size: 0.8em;
+            }
+
+            datos > container > formulario > control > text {
+                font-size: 0.8em;
+            }
         }
 
     </style>
@@ -500,46 +552,48 @@
 </portada>
 <!-- Información Personal -->
 <datos>
+    <container>
     <page>
         <number>1</number>
         <description>
             : Datos Personales
         </description>
     </page>
-    <formulario>
-        <control>
-            <label>Apellidos y Nombres: </label>
-            <text>Igor Alexander Quispe Vásquez</text>
-        </control>
-        <control>
-            <label>DNI: </label>
-            <text>46914430</text>
-        </control>
-        <control>
-            <label>Fecha de Nacimiento: </label>
-            <text>4 de diciembre, 1990</text>
-        </control>
-        <control>
-            <label>Edad: </label>
-            <text>28 años</text>
-        </control>
-        <control>
-            <label>Estado Civil: </label>
-            <text>Soltero</text>
-        </control>
-        <control>
-            <label>Nacionalidad: </label>
-            <text>Peruano</text>
-        </control>
-        <control>
-            <label>Celular: </label>
-            <text>+51930426899</text>
-        </control>
-        <control>
-            <label>Domicilio: </label>
-            <text>Ca. Ramón Castilla #352 Villa Hermosa - Chepén - La Libertad</text>
-        </control>
-    </formulario>
+        <formulario>
+            <control>
+                <label>Apellidos y Nombres: </label>
+                <text>Igor Alexander Quispe Vásquez</text>
+            </control>
+            <control>
+                <label>DNI: </label>
+                <text>46914430</text>
+            </control>
+            <control>
+                <label>Fecha de Nacimiento: </label>
+                <text>4 de diciembre, 1990</text>
+            </control>
+            <control>
+                <label>Edad: </label>
+                <text>28 años</text>
+            </control>
+            <control>
+                <label>Estado Civil: </label>
+                <text>Soltero</text>
+            </control>
+            <control>
+                <label>Nacionalidad: </label>
+                <text>Peruano</text>
+            </control>
+            <control>
+                <label>Celular: </label>
+                <text>+51930426899</text>
+            </control>
+            <control>
+                <label>Domicilio: </label>
+                <text>Ca. Ramón Castilla #352 Villa Hermosa - Chepén - La Libertad</text>
+            </control>
+        </formulario>
+    </container>
     <map id="map"></map>
 </datos>
 <estudios></estudios>
