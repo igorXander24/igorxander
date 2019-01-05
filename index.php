@@ -273,6 +273,7 @@
         }
 
         datos > container {
+            padding: 5px;
             flex-direction: column;
             max-width: 35%;
         }
@@ -293,7 +294,7 @@
 
         datos > container > formulario > control {
             flex-direction: column;
-            margin: 1em 3em;
+            margin: 0.6em 3em;
             align-items: flex-start;
         }
 
@@ -339,6 +340,10 @@
 
             datos {
                 background-color: beige;
+            }
+
+            datos > container {
+                max-width: 50%;
             }
         }
 
@@ -397,7 +402,7 @@
             }
 
             datos {
-                background-color: rebeccapurple;
+
                 flex-direction: row;
             }
 
@@ -473,7 +478,7 @@
             }
 
             datos {
-                background-color: yellow;
+                /*background-color: yellow;*/
                 flex-direction: column;
             }
 
@@ -615,6 +620,7 @@
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
     }
+
 </script>
 <!--Load the API from the specified URL igor alexander quispe
 * The async attribute allows the browser to render the page while the API loads
@@ -622,7 +628,7 @@
 * The callback parameter executes the initMap() function
 -->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVKcPUhgJAHD4D8gMCqTPMn45My6mlLb4&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUJe49V0v777r7D0kUqIYNeKbUcBKqajQ&callback=initMap">
 </script>
 
 </body>
