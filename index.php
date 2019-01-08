@@ -31,6 +31,10 @@
             flex-direction: column;
         }
 
+        script {
+            display: none;
+        }
+
         portada, datos, estudios, experiencia, documento, referencias {
             width: 100%;
             height: 100vh;
@@ -39,6 +43,10 @@
 
         portada, information {
             flex-direction: column;
+        }
+
+        estudios * {
+            display: block;
         }
 
         /**
@@ -275,6 +283,7 @@
         datos > container {
             padding: 5px;
             flex-direction: column;
+            justify-content: center;
             max-width: 35%;
         }
 
@@ -339,7 +348,7 @@
             }
 
             datos {
-                background-color: beige;
+                /*background-color: beige;*/
             }
 
             datos > container {
@@ -505,6 +514,7 @@
         }
 
     </style>
+    <link rel="stylesheet" href="timeline.css">
 </head>
 <body>
 
@@ -601,8 +611,10 @@
     </container>
     <map id="map"></map>
 </datos>
-<estudios></estudios>
-<conocimientos></conocimientos>
+<estudios>
+    <div id="timeline-embed"></div>
+</estudios>
+<conocimientos style="background-color: #cccccc"></conocimientos>
 <experiencia></experiencia>
 <documento></documento>
 <documento></documento>
@@ -631,5 +643,26 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUJe49V0v777r7D0kUqIYNeKbUcBKqajQ&callback=initMap">
 </script>
 
+<script type="text/javascript" src="timeline-min.js"></script>
+<script>
+    $(document).ready(function(){
+        var embed = document.getElementById('timeline-embed');
+        embed.style.height = getComputedStyle(document.body).height;
+        window.timeline = new TL.Timeline('timeline-embed', 'timeline3.json', { hash_bookmark: false});
+        window.addEventListener('resize', function() {
+            var embed = document.getElementById('timeline-embed');e
+            embed.style.height = getComputedStyle(document.body).height;
+            timeline.updateDisplay();
+        })
+    });
+</script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-537357-20', { 'anonymize_ip': true });
+</script>
 </body>
 </html>
